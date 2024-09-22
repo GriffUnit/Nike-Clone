@@ -2,7 +2,7 @@ import { headerLogo } from "../assets/images";
 import { hamburger } from "../assets/icons";
 import { navLinks } from "../Constants/Index";
 
-const Nav = ({ theme }) => {
+const Nav = ({ theme, toggleColor, colorState }) => {
   return (
     <header className="padding-x py-8 absolute z-10 w-full">
       <nav className=" flex justify-between items-center max-container">
@@ -23,10 +23,10 @@ const Nav = ({ theme }) => {
         </ul>
         <div className="px-5">
           <button
-            className="px-4 py-2 bg-coral-red rounded-full border-2 border-green-300 dark:text-slate-950 hover:bg-green-400 active:bg-green-600"
+            className="px-7 py-4 bg-coral-red rounded-full border-2 border-green-300 dark:text-slate-950 hover:bg-green-400 active:bg-green-600"
             onClick={theme}
           >
-            Theme
+            {toggleColor(colorState)}
           </button>
         </div>
 

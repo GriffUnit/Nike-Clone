@@ -21,11 +21,15 @@ function App() {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
-
+  const toggleColor = (colorState) => (colorState ? "Dark" : "Light");
   return (
     <div className="bg-white dark:bg-gray-900 text-black dark:text-white">
       <main className="relative">
-        <Nav theme={() => setDarkMode(!darkMode)} />
+        <Nav
+          theme={() => setDarkMode(!darkMode)}
+          toggleColor={toggleColor}
+          colorState={darkMode}
+        />
         <section className="xl:padding-l wide:padding-r padding-b">
           <Hero />
         </section>
